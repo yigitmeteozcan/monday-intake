@@ -57,7 +57,7 @@ FW: bi girisim var !addp Hero! bakar misin !note cok iyi duruyor!
 
 ```
 !addp hockey!                      → hockey
-FW: Application - ACME !addp      → ACME
+FW: Application - ACME !addp       → ACME
 FW: bunu ekler misin !addp         → ✗ eklenmez, isim sorar
 FW: bunu ekler misin !addp Hero!   → Hero  ✓
 ```

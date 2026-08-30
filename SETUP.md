@@ -29,9 +29,13 @@ usually means it worked — Terminal is quiet when things go well.
 You were probably given this as a **ZIP file**.
 
 1. Double-click the ZIP to unzip it
-2. Move the unzipped `monday-intake` folder into your **home folder** — that's
-   the one with your name on it in Finder's sidebar
-3. Open Terminal and run:
+2. **Check the folder's name.** It is often something like
+   `monday-intake-main` rather than just `monday-intake`. If so, rename it to
+   exactly **`monday-intake`** (click the name once, then type the new one) —
+   otherwise every command below will say "no such file or directory".
+3. Move that `monday-intake` folder into your **home folder** — the one with
+   your name on it in Finder's sidebar
+4. Open Terminal and run:
 
 ```bash
 cd ~/monday-intake
@@ -39,8 +43,9 @@ ls
 ```
 
 You should see a list including `README.md`, `intake`, and `requirements.txt`.
-If you get "no such file or directory", the folder isn't in your home folder
-yet — drag it there and try again.
+
+> **"no such file or directory"?** The folder isn't in your home folder, or
+> its name doesn't match. Redo points 2 and 3.
 
 > **Every command in this guide assumes you are inside that folder.** If you
 > close Terminal and come back later, always run `cd ~/monday-intake` first.
@@ -143,13 +148,18 @@ This opens a text file in TextEdit. Fill in these lines:
   here for testing.
 - **`INTAKE_ALLOWED_DOMAINS=`** — put your company domain here (e.g.
   `yourcompany.com`) to let the whole team forward directly.
-
 - **`MONDAY_DEAL_BOARD_ID=`** — the board ID for startups (from Step 4)
 - **`MONDAY_INVESTOR_BOARD_ID=`** — the board ID for investor leads
 
-⚠️ These two ship pre-filled with the previous owner's board IDs. **Check they
-match your boards** — if they don't, items will be created on the wrong board
-or the run will fail.
+⚠️ The two board IDs, and `MONDAY_DEAL_COL_PITCH_DECK`, ship pre-filled with
+the values from the setup this was built for. **If you are using the same
+Monday boards, leave them alone.** If your boards are different, replace the
+IDs and clear `MONDAY_DEAL_COL_PITCH_DECK` (Step 7 shows you the real column
+IDs for your own boards).
+
+Everything else can stay blank. Those optional `MONDAY_*_COL_*` lines only
+control whether contact details are copied into board *columns*; without them
+you still get items, updates and attachments.
 
 Save with **Cmd + S**, then close the window.
 
